@@ -48,7 +48,7 @@ componentDidMount() {
   return (
     <div className="main-container">
       <header className="header">
-           <div className="logo">
+           <div className="logo"> test
             <img src={logo2} alt="reddit logo"/>
            </div>
            <div className="search">
