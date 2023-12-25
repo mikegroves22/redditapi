@@ -1,38 +1,210 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header{
   display: flex;
-  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  height: 9%; /* was 50% */
   align-items: center;
+  justify-content:space-between;
+  position: fixed;
+  width: 100%;
+  top:0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* border: 1px solid red; */
+  z-index: 10;
+  
+}
+
+.logo{
+  margin: 20px;
+}
+
+header > div > img{
+  height: 60px;
+  float: left;
+  color: blue;
+}
+
+header > div > input{
+  width: 400px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  background-color: #E2E7E9;
+
+}
+[placeholder~="Search..."]{
+  padding-left: 10px;
+}
+
+#search:focus{
+  border: none;
+}
+
+header > div > input:focus{
+ 
+  border: none;
+  outline: none;
+
+}
+
+i{
+  font-size: 30px;
+  position: relative;
+  top: 5px;
+  left: 10px;
+  cursor: pointer;
+}
+
+i:hover{
+  color: #de3a03;
+}
+
+.header-buttons{
+  padding: 10px;
+}
+
+.header-buttons > input{
+ padding:10px;
+ border-radius: 10%;
+ margin-right: 10px;
+ border: none;
+ cursor: pointer;
+}
+
+
+.sub-container{
+  display: flex;
+  margin-top: 50px;
+}
+
+
+.content{
+
+  height: 94%; /*was 664px*/
+  width: 74%;/* was 800px or 74%*/
+  display: block;
+  margin-top: 50px;
+
+}
+
+.content > .content-card{
+
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* align-items: center; */
+/* border: 2px solid red; */
+margin: 10px 10px 20px 10px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+border-radius: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.subreddits{
+
+  height: 94%; /*was 664px*/
+  width:25%;/*was 300px */
+  border-radius: 5px;
+
+  position: fixed;
+  top: 12%; /* was 50px*/
+  right: 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 5;
+  overflow: auto;
+  padding: 20px;
+  margin-right: 10px;
+  
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.subreddits > h1{
+  margin: 10px;
+  font-size: 1.5rem;
+}
+
+.subreddit > p{
+  margin: 0 10px;
+  padding:20px;
+  max-width: 200px;
+}
+
+.subreddit:hover{
+  background-color: #E2E7E9;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    background-color: rgb(255, 255, 255);
+    
   }
-  to {
-    transform: rotate(360deg);
+
+  .sub-container{
+   width: 480px;
+  }
+
+  .header{
+    justify-content:left;
+    width: 480px;
+  }
+
+  .logo{
+    margin: 20px 10px 20px 20px;
+  }
+
+  header > div > input{
+    width: 300px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: #E2E7E9;
+  
+  }
+
+  .header-buttons{
+    display: none;
+  }
+
+.content{
+  width:480px;
+  
+}
+
+.subreddits{
+  display: none;
+}
+
+.card-body > img{
+  max-height: 400px;
+  width: 390px;
+  
+}
+
+
+}
+/* samsung phone landscape*/
+@media screen and (max-width: 726px) {
+  body {
+    background-color: rgb(255, 255, 255);
+    
+  }
+
+  .header{
+    justify-content:space-around;
+    width: 100%;
+    height: 80px;
+
+  }
+
+  .header-buttons{
+    display: none;
+  }
+
+  .subreddits{
+    display: none;
+  }
+
+  .content{
+    width: 100%;
+
   }
 }
